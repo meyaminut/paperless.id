@@ -1,0 +1,114 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ==========================================================================
+   Hero Mockup Floating Animations & Entry FX (Paperless.id)
+   ========================================================================== */
+
+/* Entry Animation: Fade In + Slide Up */
+@keyframes heroFadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(35px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-entry-anim {
+    animation: heroFadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: transform, opacity;
+}
+
+/* Float Animations for Laptop, Smartphone, Tablet with Dynamic Drop Shadow */
+
+/* Laptop Floating Animation (Center) */
+@keyframes floatLaptop {
+    0%, 100% {
+        transform: translateY(0px);
+        filter: drop-shadow(0 12px 20px rgba(15, 23, 42, 0.12));
+    }
+    50% {
+        transform: translateY(-10px);
+        filter: drop-shadow(0 25px 30px rgba(15, 23, 42, 0.18));
+    }
+}
+
+.hero-float-laptop {
+    animation: floatLaptop 5s ease-in-out infinite;
+    animation-delay: 0s;
+    will-change: transform, filter;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+/* Smartphone Floating Animation (Left) */
+@keyframes floatPhone {
+    0%, 100% {
+        transform: translateY(0px) rotate(-2deg);
+        filter: drop-shadow(0 10px 18px rgba(15, 23, 42, 0.15));
+    }
+    50% {
+        transform: translateY(-12px) rotate(-2deg);
+        filter: drop-shadow(0 22px 28px rgba(15, 23, 42, 0.22));
+    }
+}
+
+.hero-float-phone {
+    animation: floatPhone 4.4s ease-in-out infinite;
+    animation-delay: -1.2s;
+    will-change: transform, filter;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+/* Tablet Floating Animation (Right) */
+@keyframes floatTablet {
+    0%, 100% {
+        transform: translateY(0px) rotate(2deg);
+        filter: drop-shadow(0 10px 18px rgba(15, 23, 42, 0.15));
+    }
+    50% {
+        transform: translateY(-11px) rotate(2deg);
+        filter: drop-shadow(0 24px 32px rgba(15, 23, 42, 0.22));
+    }
+}
+
+.hero-float-tablet {
+    animation: floatTablet 5.6s ease-in-out infinite;
+    animation-delay: -2.8s;
+    will-change: transform, filter;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+/* Floating UI Widgets (Accents around mockups) */
+@keyframes floatWidgetSlow {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-8px) scale(1.02);
+    }
+}
+
+.hero-float-widget-1 {
+    animation: floatWidgetSlow 4.8s ease-in-out infinite;
+    animation-delay: -0.5s;
+    will-change: transform;
+}
+
+.hero-float-widget-2 {
+    animation: floatWidgetSlow 5.2s ease-in-out infinite;
+    animation-delay: -2.1s;
+    will-change: transform;
+}
+
